@@ -1,0 +1,19 @@
+%ul.contentList
+  %li.contentJob
+    .imageArea
+      = image_tag "#{content.image}"
+    .textArea
+      .titleArea
+        = link_to "#{content.heading}", "/contents/#{content.id}", method: :get
+      .contentArea
+        %p
+          ■店名：
+          %strong= content.shop
+        %p
+          ■勤務地：#{content.prefecture}#{content.city}#{content.detail}
+        %p
+          ■体験入社時間：#{content.jobTime}
+        %p
+          ■体験内容：#{content.experience}
+        %p
+          ■まかない：#{content.present}

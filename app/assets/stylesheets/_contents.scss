@@ -1,0 +1,224 @@
+body {
+ background-color: #f0f0f0;
+ font-size: 14px;
+ color: #333;
+
+}
+h1,h2,h3,h4,h5,h6,p {
+ padding: 10px 0;
+ margin: 0;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #e0ffff;
+}
+
+header{
+    height: 70px;
+    // text-align: center;
+    color: #000000;
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .logo{
+        font-family: fantasy;
+        font-size: 25px;
+        float: left;
+        margin: 10px 10px 10px 20px;
+        border-bottom : groove 5px #87cefa ;
+    }
+
+    img{
+        width: 40px;
+        margin-top:10px;
+    }
+
+    .description{
+        display: inline-block;
+        margin: 0px 120px 0px 150px;
+        font-size: 20px;
+        border-bottom : solid 2px #87cefa ;
+    }
+
+    .register{
+        display: inline-block;
+        font-size: 18px;
+        margin: 0 10px 0 10px;
+        border-left : solid 10px #87cefa ;
+        border-bottom : solid 2px #87cefa ;
+
+    }
+
+    .signIn{
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 10px 0 10px;
+        border-left : solid 10px #87cefa ;
+        border-bottom : solid 2px #87cefa ;
+    }
+
+    .new{
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 10px 0 850px;
+        border-left : solid 10px #87cefa ;
+        border-bottom : solid 2px #87cefa ;
+    }
+
+    .mypage{
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 10px 0 10px;
+        border-left : solid 10px #87cefa ;
+        border-bottom : solid 2px #87cefa ;
+    }
+
+    .logOut{
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 10px 0 10px;
+        border-left : solid 10px #87cefa ;
+        border-bottom : solid 2px #87cefa ;
+    }
+}
+
+notice{
+    height: 200px;
+    margin-top: 20px;
+
+    img{
+        width: 15%;
+        height: 200px;
+        margin-left: 10px;
+    }
+}
+
+
+.loginContent{
+    display: flex;
+    min-height: 100vh;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+.indexRight{
+    background-color: white;
+    display: inline-block;
+    width: 500px;
+    margin-left: 80px;
+}
+
+.userContent{
+    display: flex;
+    min-height: 100vh;
+    margin-top: 40px;
+}
+
+.localNavigation{
+    flex: 1;
+    text-align: center;
+    background-color: white;
+    border: solid 2px white;
+    border-radius: 20px 20px;
+    color: #4169e1;
+    margin: 0 15px 0 15px;
+
+    .foodType{
+      margin: 1px 5px 10px 5px;
+      color:#000000;
+      border-left: solid 2px #87cefa ;
+      border-right: solid 2px #87cefa ;
+
+      .foodSearch{
+        background-color:#87cefa;
+        border: solid 2px #87cefa;
+        border-radius: 20px 20px;
+      }
+
+        li.food{
+            text-align: left;
+        }
+    }
+
+    .locations{
+        margin: 1px 5px 10px 5px;
+        color: #000000;
+        border-left: solid 2px #87cefa ;
+        border-right: solid 2px #87cefa ;
+
+        .locationSearch{
+            background-color:#87cefa;
+            border: solid 2px #87cefa;
+            border-radius: 20px 20px;
+      }
+
+        li.location{
+            text-align: left;
+        }
+    }
+
+
+
+}
+.content{
+    // flex: 2;
+    // text-align: center;
+    background-color: #ffffff;
+    border: solid 2px white;
+    border-radius: 20px 20px;
+    margin: 0 20px 0 20px;
+    width: 650px;
+
+    .title{
+        text-align: left;
+        margin: 10px 0 0 10px;
+    }
+
+
+    .contentList{
+        list-style: none;
+        width: 100%;
+        padding: 0 ;
+        padding: 10px 0 ;
+
+        .imageArea{
+
+            img{
+                width: 120px;
+                height: 100px;
+                float: left;
+                margin: 10px 10px;
+            }
+
+            .picture{
+                width: 300px
+            }
+        }
+    }
+
+    .textArea{
+        display: inline-block;
+        width: 500px;
+
+        .titleArea{
+            text-align: left;
+
+        }
+
+        .contentArea{
+            text-align: left;
+
+            p{
+                font-size: 12px;
+                padding:0;
+            }
+        }
+    }
+
+}

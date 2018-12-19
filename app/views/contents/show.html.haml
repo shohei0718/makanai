@@ -1,0 +1,81 @@
+%body
+  %header.grovalNavigation
+    = link_to "まかない.com", '/',class: "logo"
+    = image_tag('/makanai.png')
+  .contentDetail
+    .textArea
+      .titleArea
+        = @content.heading
+    %table.datatable
+      %tbody
+        %tr.box
+          %th.item
+            店名
+          %td.data
+            = @content.shop
+        %tr.box
+          %th.item
+            勤務地
+          %td.data
+            = @content.prefecture
+            = @content.city
+            = @content.detail
+        %tr.box
+          %th.item
+            料理のジャンル
+          %td.data
+            = @content.genre
+        %tr.box
+          %th.item
+            仕事内容
+          %td.data
+            %br/
+            %br/
+            = @content.description
+            %br/
+            %br/
+        %tr.box
+          %th.item
+            応募資格
+          %td.data
+            = @content.qualification
+        %tr.box
+          %th.item
+            勤務時間
+          %td.data
+            %br/
+            %br/
+            = @content.workTime
+            %br/
+            %br/
+        %tr.box
+          %th.item
+            時給
+          %td.data
+            = @content.salary
+        %tr.box
+          %th.item
+            体験入社内容
+          %td.data
+            %br/
+            %br/
+            = @content.experience
+            %br/
+            %br/
+        %tr.box
+          %th.item
+            体験時間
+          %td.data
+            = @content.jobTime
+        %tr.box
+          %th.item
+            お礼のまかない
+          %td.data
+            = @content.present
+    - if user_signed_in?
+      .edit
+        = link_to "削除する", "/contents/#{@content.id}", method: :delete
+      .edit
+        = link_to "編集する", "/contents/#{@content.id}/edit", method: :get
+      = form_tag(action: :pay, method: :post) do
+        %script.payjp-button{"data-key" => "pk_test_00ff76d8e072d9b17859bd34", :src => "https://checkout.pay.jp", :type => "text/javascript"}

@@ -1,0 +1,45 @@
+.contents.row
+  = form_for(@content) do |f|
+    %div{:style => "margin: 20px 0"}
+      = f.label :求人見出し
+      = f.text_field :heading, placeholder: '例：時給1000円〜/新規OPENスタッフの募集です！', style: 'height: 15px;display: block;width: 800px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :店名
+      = f.text_field :shop, placeholder: '店名をご記入ください', style: 'height: 15px;display: block;width: 600px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :都道府県
+      = f.select :prefecture, [["大阪府", "大阪府"],["兵庫県", "兵庫県"],["京都府", "京都府"],["滋賀県", "滋賀県"],["奈良県", "奈良県"],["和歌山県", "和歌山県"]], :prompt => "選択してください", style: 'width: 100px; height: 15px; display: block; font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :市区町村
+      = f.text_field :city, placeholder: '店舗がある市区町村をご記入ください', style: 'height: 15px;display: block;width: 300px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :住所詳細
+      = f.text_field :detail, placeholder: '住所の詳細（番地を含む）をご記入ください', style: 'height: 15px;display: block;width: 800px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :料理のジャンル
+      = f.select :genre, [["すし・魚料理", "すし・魚料理"],["和食", "和食"],["ラーメン・麺類", "ラーメン・麺類"],["お好み焼き・粉物", "お好み焼き・粉物"],["日本料理・郷土料理", "日本料理・郷土料理"],["アジア・エスニック", "アジア・エスニック"],["中華", "中華"],["イタリアン", "イタリアン"],["洋食・西洋料理", "洋食・西洋料理"],["フレンチ", "フレンチ"],["アメリカ料理", "アメリカ料理"],["アフリカ料理", "アフリカ料理"],["焼き肉・ステーキ", "焼き肉・ステーキ"],["焼き鳥・串料理", "焼き鳥・串料理"],["鍋", "鍋"],["しゃぶしゃぶ・すき焼き", "しゃぶしゃぶ・すき焼き"],["居酒屋", "居酒屋"],["カフェ・スイーツ", "カフェ・スイーツ"],["ファミリーレストラン", "ファミリーレストラン"],["ファーストフード", "ファーストフード"],["ビュッフェ・バイキング", "ビュッフェ・バイキング"],["その他", "その他"]], :prompt => "選択してください", style: 'width: 500px; height: 15px; display: block; font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :仕事内容
+      = f.text_area :description, placeholder: '今回募集の仕事内容をご記入ください', style: 'width: 800px; height: 200px; display: block; font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :応募資格
+      = f.text_area :qualification, placeholder: '応募資格をご記入ください', style: 'height: 120px;display: block;width: 800px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :勤務時間
+      = f.text_area :workTime, placeholder: '勤務時間（シフト体系）をご記入ください', style: 'height: 75px;display: block;width: 800px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :時給
+      = f.text_area :salary, placeholder: '時給をご記入ください', style: 'height: 30px;display: block;width: 800px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :体験入社内容
+      = f.text_area :experience, placeholder: '体験入社における仕事内容ご記入ください', style: 'height: 200px;display: block;width: 800px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :体験時間
+      = f.text_area :jobTime, placeholder: '体験入社可能時間をご記入ください', style: 'height: 100px;display: block;width: 800px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :お礼のまかない
+      = f.text_area :present, placeholder: '体験入社後のまかないメニューをご記入ください。求職者にとって御社に興味を持って頂く大きなキッカケになりますので、しっかりPRしましょう！', style: 'height: 105px;display: block;width: 800px;font-size: 15px;'
+    %div{:style => "margin: 20px 0"}
+      = f.label :料理の写真
+      = f.file_field :image
+    = f.submit "登録"

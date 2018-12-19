@@ -1,0 +1,79 @@
+%body
+  %header.grovalNavigation
+    = link_to "まかない.com", '/',class: "logo"
+    = image_tag('/makanai.png')
+    - if user_signed_in?
+      .new
+        = link_to "求人掲載", new_content_path, method: :get
+      .mypage
+        = link_to "マイページ", destroy_user_session_path, method: :show
+      .logOut
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      .description 体験入社ができて、おまけにお礼がもらえちゃうアルバイト求人サイト！
+      .register
+        = link_to "新規登録", new_user_registration_path
+        %i.fas.fa-pencil-alt
+      .signIn
+        = link_to "ログイン", new_user_session_path
+        %i.fas.fa-lock-open
+  %notice
+    = image_tag('/makanai.png')
+    = image_tag("https://uds.gnst.jp/rest/img/c4z7gtak0000/s_00b4.jpg")
+    = image_tag("https://s3-ap-northeast-1.amazonaws.com/bhive-jp/media/iewine/article/2284/main.jpg")
+    = image_tag("https://i1.wp.com/channelcinema.com/wp/wp-content/uploads/2016/02/MOK_unitotoro_TP_V.jpg?resize=1170%2C550&ssl=1")
+    = image_tag("https://pbs.twimg.com/profile_images/506302557682012160/YpCAh4nm.jpeg")
+    = image_tag("https://sozai.hp-ez.com/image/s620x0/spic_11474.jpg")
+  - if user_signed_in?
+    %main.loginContent
+      .content
+        .title ＜過去に掲載した求人一覧＞
+        - @contents.each do |content|
+          = render partial: "content", locals: {content: content}
+        = paginate(@contents)
+      .indexRight
+        %p 広告や他店の採用成功例や飲食業界の記事を記載予定
+  - else
+    %main.userContent
+      .localNavigation
+        .foodType
+          .foodSearch 料理で探す
+          %ul.foodList
+            %li.food すし・魚料理
+            %li.food 和食
+            %li.food ラーメン・麺類
+            %li.food お好み焼き・粉物
+            %li.food 日本料理・郷土料理
+            %li.food アジア・エスニック
+            %li.food 中華
+            %li.food イタリアン
+            %li.food 洋食・西洋料理
+            %li.food フレンチ
+            %li.food アメリカ料理
+            %li.food アフリカ料理
+            %li.food 焼き肉・ステーキ
+            %li.food 焼き鳥・串料理
+            %li.food 鍋
+            %li.food しゃぶしゃぶ・すき焼き
+            %li.food 居酒屋
+            %li.food カフェ・スイーツ
+            %li.food ファミリーレストラン
+            %li.food ファーストフード
+            %li.food ビュッフェ・バイキング
+            %li.food その他
+        .locations
+          .locationSearch 勤務地で探す
+          %ul.locationList
+            %li.location 大阪府
+            %li.location 兵庫県
+            %li.location 京都府
+            %li.location 滋賀県
+            %li.location 奈良県
+            %li.location 和歌山県
+      .content
+        .title ＜今週の新着求人をピックアップ！！＞※そのほか特集ページを作成予定
+        - @contents.each do |content|
+          = render partial: "content", locals: {content: content}
+        = paginate(@contents)
+      .localNavigation
+        %p まかないランキングや広告等を記載予定
